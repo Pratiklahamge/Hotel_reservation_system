@@ -6,8 +6,7 @@ import java.util.List;
 
 
 /**
- * Purpose  - Ability to find the cheapest Hotel for a given Date Range based on weekday and weekend
- * Author   - Pratik lahamge
+ * Purpose  - Ability to add ratings to each Hotel
  * @version - 11.0
  * @since   - 7-11-2021
  */
@@ -15,7 +14,7 @@ import java.util.List;
 public class HotelReservationSystem {
 	private List<Hotel> hotels;
 
-	public HotelReservationSystem(){
+	public HotelReservationSystem() {
 		this.hotels = new ArrayList<>();
 	}
 
@@ -28,14 +27,16 @@ public class HotelReservationSystem {
 
 	/**
 	 * This method is used to find the cheapest hotel in the HotelList
-	 * @return - cheapestHotel - The cheapest hotel in the list
+	 *@return - cheapestHotel - The cheapest hotel in the list
 	 */
-	public int findCheapestHotel(){
-		int LakeWoodRate = 110; int BridgeWoodRate = 160; int Ridgewood = 220;
-		int cheapestHotel = (LakeWoodRate>BridgeWoodRate) ?
-				(LakeWoodRate>Ridgewood ? LakeWoodRate : Ridgewood) :
-					(BridgeWoodRate>Ridgewood ? BridgeWoodRate : Ridgewood) ;
-		System.out.println("The cheapest Hotel is " +cheapestHotel);
+	public int findCheapestHotel() {
+		int LakeWoodRate = 110;
+		int BridgeWoodRate = 160;
+		int Ridgewood = 220;
+		int cheapestHotel = (LakeWoodRate > BridgeWoodRate) ?
+				(LakeWoodRate > Ridgewood ? LakeWoodRate : Ridgewood) :
+					(BridgeWoodRate > Ridgewood ? BridgeWoodRate : Ridgewood);
+		System.out.println("The cheapest Hotel is " + cheapestHotel);
 		return cheapestHotel;
 	}
 
@@ -71,9 +72,9 @@ public class HotelReservationSystem {
 		}
 	}
 	public static void main(String[] args) throws Exception {
-		Hotel hotel1 = new Hotel("LakeWood","Regular", 110,90);
-		Hotel hotel2 = new Hotel("BridgeWood","Regular", 150, 50);
-		Hotel hotel3 = new Hotel("RidgeWood","Regular", 220, 150);
+		Hotel hotel1 = new Hotel("LakeWood","Regular", 110,90, 3);
+		Hotel hotel2 = new Hotel("BridgeWood","Regular", 150, 50, 4);
+		Hotel hotel3 = new Hotel("RidgeWood","Regular", 220, 150, 5);
 		String sDate1="10-09-2020";
 		String sDate2="11-09-2020";
 		Date date1=new SimpleDateFormat("dd-MM-yyyy").parse(sDate1);
